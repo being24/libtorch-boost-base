@@ -18,7 +18,7 @@ RUN set -x && \
     sh ./bootstrap.sh && \
     ./b2 install -j2 -j $(grep cpu.cores /proc/cpuinfo | sort -u | awk '{split($0, ary, ": "); print(ary[2] + 1)}' ) && \
     cd /workdir && \
-    rm -rf boost_1_82_0 \
+    rm -rf boost_1_82_0 && \
     curl -L -O https://download.pytorch.org/libtorch/cu117/libtorch-cxx11-abi-shared-with-deps-2.0.1%2Bcu117.zip && \
     unzip ./libtorch-cxx11-abi-shared-with-deps-2.0.1%2Bcu117.zip && \
     rm -rf ./libtorch-cxx11-abi-shared-with-deps-2.0.1%2Bcu117.zip && \
