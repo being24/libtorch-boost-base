@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.7.1-base-ubuntu22.04
+FROM nvidia/cuda:11.7.1-devel-ubuntu22.04
 
 ENV LC_CTYPE='C.UTF-8'
 ENV LC_ALL='C.UTF-8'
