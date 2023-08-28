@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.7.1-base-ubuntu20.04
+FROM nvidia/cuda:11.7.1-base-ubuntu22.04
 
 ENV LC_CTYPE='C.UTF-8'
 ENV LC_ALL='C.UTF-8'
@@ -7,7 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 WORKDIR /workdir/
 
 RUN set -x && \
-    apt-get update && apt-get install -y && \
+    apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends curl git build-essential libssl-dev cmake nano iproute2 unzip&& \
     curl https://getmic.ro | bash && \
     mv micro /usr/bin && \
